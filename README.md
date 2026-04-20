@@ -54,19 +54,22 @@ uv run streetview_movie.py \
   --out   redmond_to_aurora_consistent.mp4
 ```
 
-## Flags worth knowing
+## Flags
 
 | flag | default | notes |
 |---|---|---|
+| `--mode` | driving | also `walking` or `bicycling`; affects the routing profile. |
 | `--step` | 10 m | smaller = smoother + way more $$. 15–25m is fine for driving. |
-| `--fps` | 24 | 24 feels cinematic, 30–60 feels more like dashcam. |
+| `--fps` | 24 | lower = slower playback (more time per frame); 24 feels cinematic, 30–60 feels more like dashcam. |
 | `--size` | 1280x720 | max 640x640 on the free tier; up to 2048x2048 otherwise. |
 | `--pitch` | 0 | negative looks down, positive looks up. |
 | `--fov` | 90 | 60 = telephoto feel, 120 = fisheye wide. |
 | `--pano-radius` | 50 | raise to 100–200 for rural/sparse coverage. |
 | `--heading-lookahead` | 3 | aim using the snapped pano path a few panos ahead to keep the road more centered. |
+| `--frames-dir` | `frames` | where frames get written, and where `--encode-only` reads them from. |
 | `--encode-only` | off | skip Google API calls and just run ffmpeg over an existing `frame_*.jpg` directory. |
 | `--stabilize` | off | ffmpeg deflicker + luma-only denoise; smoother playback while preserving color better. |
+| `--keep-frames` | off | skip the "frames dir already exists" warning; useful for resuming into an existing `--frames-dir`. |
 
 ## Cost math
 
