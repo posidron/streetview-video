@@ -87,10 +87,6 @@ get a $200/month free credit on new Google Cloud projects, which covers roughly
 - **Heading wobble.** Already smoothed with a 7-frame circular rolling mean.
   Raise `--heading-lookahead` if some frames still glance too hard into turns
   or side roads.
-- **Terms of Service.** Personal/noncommercial hyperlapses are generally fine;
-  mass caching frames or shipping this as a product is where you should re-read
-  the Google Maps Platform ToS (§3.2.3 and §3.2.4 at time of writing — worth
-  verifying yourself).
 - **Rate limits.** The 20ms sleep between requests keeps you well under the
   default QPS ceilings. Parallelizing with a thread pool works, but watch for
   429s.
