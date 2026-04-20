@@ -1,0 +1,11 @@
+[project]
+name = "streetview-video"
+version = "0.1.0"
+description = "Build a hyperlapse-style MP4 between two points using Google Street View"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "polyline",
+    "python-dotenv",
+    "requests",
+]
